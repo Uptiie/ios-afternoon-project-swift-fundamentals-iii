@@ -8,8 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+enum CurrencyType {
+    case cad
+    case peso
+}
 
+class ViewController: UIViewController {
+    
+    var currencyType: CurrencyType = .cad
+    
+    var exchangeRateCad = 3.0
+    var exchangeRatePeso = 5.0
+    
     
     @IBOutlet weak var fromCurrencyTextField: UITextField!
     @IBOutlet weak var toCurrencyTextField: UITextField!
@@ -28,22 +38,20 @@ class ViewController: UIViewController {
     }
     @IBAction func pesoButtonPressed(_ sender: Any) {
     }
-    @IBAction func covertButtonPressed(_ sender: Any) {
+    @IBAction func convertButtonPressed(_ sender: Any) {
     }
-    
-    enum CurrencyType {
-        case cad
-        case peso
-    }
-    
-    var currencyType = CurrencyType.cad
-    
+
+    //Convert currency into CAD/Peso from USD
+    // Return Converted Amount
     func convert(dollars: Double, to unit: CurrencyType) -> Double {
-        if let toCurrencyTextField.text: String? = CurrencyType.cad {
-            return CurrencyType 
+        if currencyType == .cad {
+            var canadianConvert = dollars * exchangeRateCad
+            return canadianConvert
+        } else {
+            var pesoConvert = dollars * exchangeRatePeso
+            return pesoConvert
         }
     }
-
-
+    
     
 }
