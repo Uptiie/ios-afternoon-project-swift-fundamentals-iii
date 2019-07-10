@@ -59,6 +59,7 @@
                                         <rect key="frame" x="0.0" y="76" width="382" height="30"/>
                                         <state key="normal" title="Convert"/>
                                         <connections>
+                                            <action selector="convertButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hdn-RS-nq3"/>
                                             <action selector="covertButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iWG-uK-H14"/>
                                         </connections>
                                     </button>

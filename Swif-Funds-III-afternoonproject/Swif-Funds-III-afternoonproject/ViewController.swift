@@ -35,23 +35,31 @@ class ViewController: UIViewController {
     }
 
     @IBAction func cadButtonPressed(_ sender: Any) {
+        
     }
+    
     @IBAction func pesoButtonPressed(_ sender: Any) {
+        
+        
     }
+    
     @IBAction func convertButtonPressed(_ sender: Any) {
+        guard let convertCurrencyString = fromCurrencyTextField.text,
+            let currency = Double(convertCurrencyString) else { return }
+        
+        convert(dollars: currency, to: currencyType)
     }
 
     //Convert currency into CAD/Peso from USD
     // Return Converted Amount
+
     func convert(dollars: Double, to unit: CurrencyType) -> Double {
-        if currencyType == .cad {
-            var canadianConvert = dollars * exchangeRateCad
+        if CurrencyType.cad  == .cad {
+            let canadianConvert = dollars * exchangeRateCad
             return canadianConvert
         } else {
-            var pesoConvert = dollars * exchangeRatePeso
+            let pesoConvert = dollars * exchangeRatePeso
             return pesoConvert
         }
     }
-    
-    
 }
