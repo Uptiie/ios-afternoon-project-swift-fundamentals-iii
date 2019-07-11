@@ -59,8 +59,7 @@
                                         <rect key="frame" x="0.0" y="76" width="382" height="30"/>
                                         <state key="normal" title="Convert"/>
                                         <connections>
-                                            <action selector="convertButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hdn-RS-nq3"/>
-                                            <action selector="covertButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iWG-uK-H14"/>
+                                            <action selector="convertButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O3I-1I-kBe"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -100,7 +99,6 @@
                     </view>
                     <connections>
                         <outlet property="cadButton" destination="1o3-Ro-auM" id="XCt-Sg-Zsf"/>
-                        <outlet property="convertButtonPressed" destination="SyE-zr-F4t" id="y4U-j7-5Vp"/>
                         <outlet property="fromCurrencyTextField" destination="jYq-St-1pk" id="a3s-89-7C3"/>
                         <outlet property="pesoButton" destination="izB-hX-9G1" id="xp4-pW-Wxb"/>
                         <outlet property="toCurrencyLabel" destination="9EW-NF-82f" id="FU5-Am-TUv"/>

@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var toCurrencyTextField: UITextField!
     @IBOutlet weak var toCurrencyLabel: UILabel!
     
-
+    
     @IBOutlet weak var cadButton: UIButton!
     @IBOutlet weak var pesoButton: UIButton!
     
@@ -33,13 +33,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     @IBAction func cadButtonPressed(_ sender: Any) {
+        if cadButton.isSelected == true {
+            toCurrencyLabel.text = "Currency (CAD)"
+        }
         
     }
     
     @IBAction func pesoButtonPressed(_ sender: Any) {
-        
+        if pesoButton.isSelected == true {
+            toCurrencyLabel.text = "Currency (PESO)"
+        }
         
     }
     
@@ -47,13 +52,17 @@ class ViewController: UIViewController {
         guard let convertCurrencyString = fromCurrencyTextField.text,
             let currency = Double(convertCurrencyString) else { return }
         
-        convert(dollars: currency, to: currencyType)
+        let convertedCurrency = convert(dollars: currency)
+        toCurrencyTextField.text = "\(convertedCurrency)"
+        
+        
+        
     }
-
+    
     //Convert currency into CAD/Peso from USD
     // Return Converted Amount
-
-    func convert(dollars: Double, to unit: CurrencyType) -> Double {
+    
+    func convert(dollars: Double) -> Double {
         if CurrencyType.cad  == .cad {
             let canadianConvert = dollars * exchangeRateCad
             return canadianConvert
